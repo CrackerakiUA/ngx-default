@@ -8,7 +8,7 @@ import {
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
-import { provideTranslate } from 'wacom';
+import { provideTranslate } from '@wawjs/ngx-translate';
 import { routes } from './app.routes';
 import { BootstrapService } from './feature/bootstrap/bootstrap.service';
 import { LanguageService } from './feature/language/language.service';

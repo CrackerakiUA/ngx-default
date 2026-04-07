@@ -1,4 +1,4 @@
-import { Translate } from 'wacom';
+import { Translate } from '@wawjs/ngx-translate';
 
 export const sv = {
 	'Go to homepage': 'Gå till startsidan',

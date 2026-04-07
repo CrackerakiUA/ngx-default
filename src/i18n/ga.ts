@@ -1,4 +1,4 @@
-import { Translate } from 'wacom';
+import { Translate } from '@wawjs/ngx-translate';
 
 export const ga = {
 	'Go to homepage': 'Téigh go dtí an leathanach baile',

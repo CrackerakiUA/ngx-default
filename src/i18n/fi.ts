@@ -1,4 +1,4 @@
-import { Translate } from 'wacom';
+import { Translate } from '@wawjs/ngx-translate';
 
 export const fi = {
 	'Go to homepage': 'Siirry etusivulle',

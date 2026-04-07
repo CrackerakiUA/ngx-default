@@ -1,6 +1,6 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Injectable, PLATFORM_ID, inject, signal } from '@angular/core';
-import { Translate, TranslateService } from 'wacom';
+import { Translate, TranslateService } from '@wawjs/ngx-translate';
 
 import { environment } from '../../../environments/environment';
 import { LanguageKey, translationLoaders } from '../../../i18n';

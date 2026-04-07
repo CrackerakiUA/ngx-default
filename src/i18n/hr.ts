@@ -1,4 +1,4 @@
-import { Translate } from 'wacom';
+import { Translate } from '@wawjs/ngx-translate';
 
 export const hr = {
 	'Go to homepage': 'Idi na početnu stranicu',

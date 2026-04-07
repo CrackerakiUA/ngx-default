@@ -1,4 +1,4 @@
-import { Translate } from 'wacom';
+import { Translate } from '@wawjs/ngx-translate';
 
 export const fr = {
 	'Go to homepage': "Aller à la page d'accueil",
