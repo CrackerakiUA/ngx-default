@@ -1,0 +1,60 @@
+name: Update Orgs
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    update-orgs:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+
+            - name: Set up SSH
+              env:
+                  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+              run: |
+                  mkdir -p ~/.ssh
+                  echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+                  chmod 600 ~/.ssh/id_rsa
+                  ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+            - name: Commit and push to org master using SSH
+              env:
+                  GIT_SSH_COMMAND: 'ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no'
+              run: |
+                  rm -rf .github/workflows/update-orgs.yml
+                  mv .github/deploy.yml .github/workflows/deploy.yml
+                  git config --global user.name "github-actions[bot]"
+                  git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+                  TARGETS=(
+                    "git@github.com:london-it-space/ngx-default.git|ngx.londonit.space"
+                    "git@github.com:ternopil-space/ngx-default.git|ngx.ternopil.space"
+                    "git@github.com:uman-it-space/ngx-default.git|ngx.umanit.space"
+                    "git@github.com:vinnytsia-space/ngx-default.git|ngx.vinnytsia.space"
+                    "git@github.com:frankivsk-space/ngx-default.git|ngx.frankivsk.space"
+                    "git@github.com:chernivtsi-space/ngx-default.git|ngx.chernivtsi.space"
+                    "git@github.com:IT-Kamianets/ngx-default.git|ngx.itkamianets.com"
+                  )
+
+                  for target in "${TARGETS[@]}"; do
+                    repo="${target%%|*}"
+                    domain="${target##*|}"
+
+                    rm -rf .git
+                    echo "$domain" > CNAME
+                    git init
+                    git add --all .
+                    git commit -m "Update HoReCa template"
+                    git checkout -B master
+                    git push "$repo" master --force
+                  done
+
+            - name: Clean up SSH
+              run: |
+                  rm -f ~/.ssh/id_rsa
+                  rm -f ~/.ssh/known_hosts
