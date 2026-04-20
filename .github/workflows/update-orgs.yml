@@ -30,6 +30,7 @@ jobs:
                   mv .github/deploy.yml .github/workflows/deploy.yml
                   git config --global user.name "github-actions[bot]"
                   git config --global user.email "github-actions[bot]@users.noreply.github.com"
+                  cp README.md "$RUNNER_TEMP/README.template.md"
 
                   TARGETS=(
                     "git@github.com:london-it-space/ngx-default.git|ngx.londonit.space"
