@@ -891,7 +891,7 @@ Use these locations by default:
 Clone the default repository into a new folder with your project name (replace `PROJECT_NAME` with your project name):
 
 ```bash
-git clone https://github.com/IT-Kamianets/ngx-default.git PROJECT_NAME
+git clone https://github.com/REPLACEORGDOMAIN/ngx-default.git PROJECT_NAME
 cd PROJECT_NAME
 npm i
 npm run start
@@ -899,7 +899,7 @@ npm run start
 
 ### What these commands do
 
-- `git clone https://github.com/IT-Kamianets/ngx-default.git PROJECT_NAME`
+- `git clone https://github.com/REPLACEORGDOMAIN/ngx-default.git PROJECT_NAME`
   Downloads the template repository and creates a local folder named `PROJECT_NAME`.
 - `cd PROJECT_NAME`
   Opens the newly created project folder.
@@ -919,7 +919,7 @@ Example:
 ```bash
 rm -rf .git
 git init
-git remote add origin https://github.com/IT-Kamianets/PROJECT_NAME.git
+git remote add origin https://github.com/REPLACEORGDOMAIN/PROJECT_NAME.git
 git add .
 git commit -m "chore(init): bootstrap project from ngx-default template"
 ```
