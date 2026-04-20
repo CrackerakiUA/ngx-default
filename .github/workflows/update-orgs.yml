@@ -36,7 +36,7 @@ jobs:
                     "git@github.com:london-it-space/ngx-default.git|ngx.londonit.space"
                     "git@github.com:ternopil-space/ngx-default.git|ngx.ternopil.space"
                     "git@github.com:uman-it-space/ngx-default.git|ngx.umanit.space"
-                    "git@github.com:volyn-it-space/HoReCa.git|horeca.volynit.space"
+                    "git@github.com:volyn-it-space/ngx-default.git|ngx.volynit.space"
                     "git@github.com:vinnytsia-space/ngx-default.git|ngx.vinnytsia.space"
                     "git@github.com:frankivsk-space/ngx-default.git|ngx.frankivsk.space"
                     "git@github.com:chernivtsi-space/ngx-default.git|ngx.chernivtsi.space"
