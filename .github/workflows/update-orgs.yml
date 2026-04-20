@@ -54,7 +54,7 @@ jobs:
                     sed "s/REPLACEORGDOMAIN/$org/g" "$RUNNER_TEMP/README.template.md" > README.md
                     git init
                     git add --all .
-                    git commit -m "Update HoReCa template"
+                    git commit -m "Update ngx default template"
                     git checkout -B master
                     git push "$repo" master --force
                   done
